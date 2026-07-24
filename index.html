@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Placeholder Styling Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #0056b3;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* --- General Placeholder Styling (applies to all if not overridden) --- */
+        /* Standard syntax for modern browsers */
+        ::placeholder {
+            color: #a0a0a0; /* Default grey color */
+            font-style: italic;
+            opacity: 1; /* Ensure consistent opacity across browsers, as Firefox defaults to lower */
+        }
+
+        /* Webkit browsers (Chrome, Safari, Edge, Opera) */
+        ::-webkit-input-placeholder {
+            color: #a0a0a0;
+            font-style: italic;
+        }
+
+        /* Mozilla Firefox */
+        ::-moz-placeholder {
+            color: #a0a0a0;
+            font-style: italic;
+            opacity: 1; /* Override Firefox default opacity */
+        }
+
+        /* Internet Explorer 10-11 */
+        :-ms-input-placeholder {
+            color: #a0a0a0;
+            font-style: italic;
+        }
+
+        /* --- Specific Placeholder Styling for individual fields --- */
+
+        /* Styling for the Name field placeholder */
+        #name-field::placeholder {
+            color: #007bff; /* Blue color */
+            font-weight: bold;
+            font-style: normal;
+        }
+        #name-field::-webkit-input-placeholder {
+            color: #007bff;
+            font-weight: bold;
+            font-style: normal;
+        }
+        #name-field::-moz-placeholder {
+            color: #007bff;
+            font-weight: bold;
+            font-style: normal;
+            opacity: 1;
+        }
+        #name-field:-ms-input-placeholder {
+            color: #007bff;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Styling for the Email field placeholder */
+        #email-field::placeholder {
+            color: #28a745; /* Green color */
+            font-size: 0.9em;
+        }
+        #email-field::-webkit-input-placeholder {
+            color: #28a745;
+            font-size: 0.9em;
+        }
+        #email-field::-moz-placeholder {
+            color: #28a745;
+            font-size: 0.9em;
+            opacity: 1;
+        }
+        #email-field:-ms-input-placeholder {
+            color: #28a745;
+            font-size: 0.9em;
+        }
+
+        /* Styling for the Message textarea placeholder */
+        #message-field::placeholder {
+            color: #dc3545; /* Red color */
+            font-family: 'Courier New', Courier, monospace;
+            font-style: normal;
+        }
+        #message-field::-webkit-input-placeholder {
+            color: #dc3545;
+            font-family: 'Courier New', Courier, monospace;
+            font-style: normal;
+        }
+        #message-field::-moz-placeholder {
+            color: #dc3545;
+            font-family: 'Courier New', Courier, monospace;
+            font-style: normal;
+            opacity: 1;
+        }
+        #message-field:-ms-input-placeholder {
+            color: #dc3545;
+            font-family: 'Courier New', Courier, monospace;
+            font-style: normal;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CSS Placeholder Text Styling</h1>
+
+    <form>
+        <div>
+            <label for="name-field">Name:</label>
+            <input type="text" id="name-field" placeholder="Enter your full name here">
+        </div>
+
+        <div>
+            <label for="email-field">Email:</label>
+            <input type="email" id="email-field" placeholder="your.email@example.com">
+        </div>
+
+        <div>
+            <label for="password-field">Password:</label>
+            <input type="password" id="password-field" placeholder="Min 8 characters, 1 uppercase">
+        </div>
+
+        <div>
+            <label for="search-field">Search:</label>
+            <input type="text" id="search-field" placeholder="Search for products or articles...">
+        </div>
+
+        <div>
+            <label for="message-field">Message:</label>
+            <textarea id="message-field" placeholder="Type your message or feedback here..."></textarea>
+        </div>
+    </form>
+</body>
+</html>
